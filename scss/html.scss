@@ -5,5 +5,8 @@ html {
   line-height: 1.5;
   color: #fff;
   background-color: #333;
-  box-sizing: border-box;
+  @media (min-width: $max-width) {
+    margin: 0;
+  }
+
 }
