@@ -1,2 +1,3 @@
-node_modules
-Verkefnalýsing
+node_modules/
+Verkefnalýsing/
+gogn/
