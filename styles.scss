@@ -1,6 +1,9 @@
 $max-width: 1200px;
 $gutter: 20px;
 
+$font-main: "Open Sans", helvetica, arial, sans-serif;
+$font-heading: "Roboto Slab", georgia, serif;
+
 html { /* stylelint-disable-line */
   box-sizing: border-box;
 }
@@ -40,3 +43,4 @@ main { /* stylelint-disable-line */
 
 @import "scss/grid";
 @import "scss/html";
+@import "scss/cards";
