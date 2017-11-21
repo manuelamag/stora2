@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function () ){
       }
       writeHTML.fdetchData(API_URL);
       }
+
     });
     var writeHTML = (function() {
       var allData;
@@ -18,9 +19,7 @@ document.addEventListener("DOMContentLoaded", function () ){
       var row;
     })
 
-<<<<<<< HEAD
-//# sourceMappingURL=script-compiled.js.map
-=======
+
     function lastPlayed(date) {
       var now = Date.now();
       var lastPlayed = now-date;
@@ -28,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () ){
 
       var hours = Math.floor(totalSeconds / 3600);
       var days = Math.floor(totalSeconds / (60 * 60 * 24));
-      var weeks = Math.floor(totalSeconds /(60 * 60 * 24 * 7));
+      var weeks = Math.floor(totalSeconds / (60 * 60 * 24 * 7));
       var months = Math.floor(totalSeconds / (60 * 60 * 24 * 30));
       var years = Math.floor(totalSeconds / (60 * 60 * 24 * 365));
 
@@ -53,4 +52,18 @@ document.addEventListener("DOMContentLoaded", function () ){
       } else {
         return ("Engin dagsetning gefin")
       }
+    }
+
+    function showLoading(){
+      var loading = document.createElement('div');
+      var div = document.createElement('div');
+
+      var img = document.createElement('img');
+      img.setAttribute('src', 'loading.gif');
+      div.appendChild(img);
+      results.appendChild(div);
+    }
+
+    function stopLoading() {
+      var loading = document.querySelector(".loading");
     }
