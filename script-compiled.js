@@ -17,7 +17,77 @@ document.addEventListener("DOMContentLoaded", function () ){
         const player = new Player();
 
         const videosContainer = document.querySelector('.videos');
+class Player {
+  constructor(){
+    this.playerContainer = document.querySelector('.player__container');
+  }
+  loadVideo(id, videos) {
+    const video = videos.find(v => v.id === id);
 
+    if (!video) {
+      this.error('Videó er ekki til');
+    } else {
+      this.empty(this.playerContainer);
+      this.setHeader(video.title);
+      this.createVideo(video);
+    }
+  }
+}
+
+if (isPaused) {
+  this.video.play();
+  this.removeOverlay();
+  this.playButton.classList.remove('controls__button--play');
+  this.playButton.classList.add('controls__button--pause');
+} else {
+  this.video.pause();
+  this.addOverlay();
+  this.playButton.classList.remove('controls__button--pause');
+  this.playButton.classList.add('controls__button--play');
+}
+
+  mute() {
+  this.video.muted = !this.video.muted;
+  this.muteButton.classList.toggle('controls__button--mute');
+  this.muteButton.classList.toggle('controls__button--unmute');
+  }
+
+controls() {
+  const controls = document.querySelector('.controls');
+
+  const back = controls.querySelector('.controls__button--back');
+  back.addEventListener('click', this.back.bind(this));
+  
+  const play = controls.querySelector('.controls__button--play');
+  play.addEventListener('click', this.play.bind(this));
+  this.playButton = play;
+
+  const mute = controls.querySelector('.controls__button--mute');
+  mute.addEventListener('click', this.mute.bind(this));
+  this.muteButton = mute;
+
+  const fullscreen = controls.querySelector('.controls__button--fullscreen');
+  fullscreen.addEventListener('click', this.fullscreen.bind(this));
+
+  const forward = controls.querySelector('.controls__button--forward');
+  forward.addEventListener('click', this.forward.bind(this));
+}
+
+back() {
+  if (this.video.paused) {
+    return;
+  }
+  const content = this.video.currentTime;
+
+  const target = Math.max(current - 3.0);
+
+  this.video.currentTime - target;
+}
+play(e) {
+  e.stopPropagation();
+
+  const ifPaused = this.video.paused;
+}
         if (videosContainer) {
           videos.load();
         } else {
@@ -108,7 +178,7 @@ function text(t){}
 }
 controls( {
 const controls = document.querySelector
-element.setAttribute('href', .)
+element.setAttribute('href', .s)
 })
 ancor element utan um vídeo elementið til að hafa cursor allstaðar.
 alltaf að birta, hleð gögnum og hreinsa svo aftur.
