@@ -1,0 +1,56 @@
+.controls__button {
+  //display: inline-block;
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  overflow: hidden;
+  background-color: transparent;
+  background-size: 50px 50px;
+  background-repeat: no-repeat;
+  color: #eee;
+  padding: 5px;
+  background-color: #333;
+  background-repeat: no-repeat;
+  border: 0;
+  cursor: pointer;
+
+}
+.controls__buttons {
+
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+}
+
+.controls{
+  width: 100%;
+}
+
+.controls__button--back{
+  background-image: url(gogn/img/back.svg);
+}
+.controls__button--play{
+  background-image: url(gogn/img/play.svg);
+}
+.controls__button--pause{
+  background-image: url(gogn/img/pause.svg);
+}
+.controls__button--mute{
+  background-image: url(gogn/img/mute.svg);
+}
+.controls__button--unmute{
+  background-image: url(gogn/img/unmute.svg);
+}
+.controls__button--fullscreen{
+  background-image: url(gogn/img/fullscreen.svg);
+}
+.controls__button--unmute{
+  background-image: url(gogn/img/unmute.svg);
+}
+//.button__hidden {
+  //display: none;
+//}
