@@ -96,6 +96,12 @@ function showData(data){
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const video = new Video();
-  countdown.video();
+  const videos = new Videos(); //index síðan
+  const player = new Player(); //videos síðan
+
+  if(document.querySelector('.videos')){
+    videos.load();
+  } else {
+    player.load();
+  }
   });
