@@ -12,13 +12,37 @@ document.addEventListener("DOMContentLoaded", function () ){
       writeHTML.fdetchData(API_URL);
       }
 
+      document.addEventListener('DOMContentLoaded', () => {
+        const videos = new Videos();
+        const player = new Player();
+
+        const videosContainer = document.querySelector('.videos');
+
+        if (videosContainer) {
+          videos.load();
+        } else {
+          player.load();
+          player.controls();
+        }
+      })
     });
     var writeHTML = (function() {
       var allData;
       var main = document.querySelector("main");
       var row;
     })
-
+    class Videos {
+      constructor () {
+        this.videoContainer = document.querySelector(.constructor)
+      }
+      LoadCategories(allVideos, categories) {
+        this.empty(this.videosContainer);
+        categories.foreEach((category) => {
+          const viedos = allVideos.filter(video => categories)
+          this.createCategory(category.title, videos);
+        });
+      }
+    }
 
     function lastPlayed(date) {
       var now = Date.now();
@@ -67,3 +91,24 @@ document.addEventListener("DOMContentLoaded", function () ){
     function stopLoading() {
       var loading = document.querySelector(".loading");
     }
+
+    /*
+  createVideo(video) {
+  function el(name, className, child) {
+    const element = document.createElement(name);
+    element.classList.add(className);
+
+    if (child) {
+    element.appendChild(child);
+  }
+  return element;
+}
+function text(t){}
+  const aElement = el
+}
+controls( {
+const controls = document.querySelector
+element.setAttribute('href', .)
+})
+ancor element utan um vídeo elementið til að hafa cursor allstaðar.
+alltaf að birta, hleð gögnum og hreinsa svo aftur.
