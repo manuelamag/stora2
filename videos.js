@@ -15,10 +15,10 @@ class Player {
     this.playerContainer = document.querySelector('.video__container')
   }
 
-loadVideo(id, videos){
-  const video = video.find(v.id===id);
+  loadVideo(id, videos){
+    const video = video.find(v.id===id);
 
-  if (!video){
+    if (!video){
     this.error('Video er ekki til');
   } else {
     this.empty(this.playerContainer);
@@ -26,8 +26,6 @@ loadVideo(id, videos){
     this.createVideo(video);
   }
 }
-}
-
 addOverlay(){
   const overlay = document.createElement('div');
   overlay.classList.add('player__overlay');
@@ -51,16 +49,15 @@ load (){
       else{
         this.error ('Gat ekki hlaðið vídeoi')
       }
-  };
+    };
 
-  request.onerror = () => {
+    request.onerror = () => {
     //hér vantar eitthvað
   }
   //this.Controls();
   //this.id = window.location.search.substring(4);
   //this.playVideo();
 }
-
 function play(){
   this.buttons.play.setAttribute('class', 'button__hidden');
   this.buttons.pause.setAttribute('class', 'button');
@@ -87,17 +84,17 @@ function pause(){
 }
 
   rewind(){
-  if (this.video.paused){
-    return;
+    if (this.video.paused){
+      return;
+    }
+    const current = this.video.currentTime;
+    const target = Math.max(current - 3, 0);
+    this.video.currentTime=target;
   }
-  const current = this.video.currentTime;
-  const target = Math.max(current - 3, 0);
-  this.video.currentTime=target;
-}
 
-function forward(){
-  this.video.currentTime += 3;
-}
+  forward(){
+    this.video.currentTime += 3;
+  }
 
 createVideo(video){
 const url = "/video.html?id=$(video.id)";
