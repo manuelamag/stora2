@@ -1,8 +1,8 @@
 class Player {
-  constructor(){
+  function constructor(){
     this.playerContainer = document.querySelector('.player__container');
   }
-  loadVideo(id, videos) {
+  function loadVideo(id, videos) {
     const video = videos.find(v => v.id === id);
 
     if (!video) {
@@ -28,7 +28,7 @@ class Player {
   };
   request.send();
 
-  play(e) {
+  function play(e) {
     e.stopPropagation();
 
     const ifPaused = this.video.paused;
@@ -46,7 +46,7 @@ var writeHTML = (function() {
   var row;
 })
 
-createVideo(video){
+function createVideo(video){
   const url = "/video.html?id=$(video.id)";
   const duration = this.formatDuration(video.duration);
   const title = this.formatTitle(video.title);
@@ -128,7 +128,7 @@ function stopLoading() {
   var loading = document.querySelector(".loading");
 }
 
-controls() {
+function controls() {
   const controls = document.querySelector('.controls');
 
   const back = controls.querySelector('.controls__button--back');
@@ -155,20 +155,22 @@ class Videos {
     this.videoContainer = document.querySelector(.constructor);
   }
 
-  LoadCategories(allVideos, categories) {
+  function LoadCategories(allVideos, categories) {
     this.empty(this.videosContainer);
     categories.foreEach((category) => {
       const viedos = allVideos.filter(video => categories)
       this.createCategory(category.title, videos);
     });
   }
-  addOverlay(){
+
+  function addOverlay(){
     const overlay = document.createElement('div');
-    overlay.classList.add('player__overlay');
+    overlay.classList.add('.player__overlay');
     this.playerContainer.appendChild(overlay);
     overlay.addEventListener('click', this.play.bind(this));
   }
-  load (){
+
+  function load (){
     const request = new XMLHttpRequest();
     const qs = new URLSearchParams(window.location.search);
     const id = parseInt(qs.get('id'), 10);
@@ -179,7 +181,7 @@ class Videos {
         this.loadVideo(id, data.videos);
       }
       else{
-        this.error ('Gat ekki hlaðið vídeoi')
+        this.error ('Gat ekki hlaðið vídeoi');
       }
     };
   }
@@ -199,7 +201,7 @@ class Videos {
     }
   }
 
-  rewind(){
+  function rewind(){
     if (this.video.paused){
       return;
     }
@@ -241,7 +243,7 @@ class Videos {
     }
   }
 
-  playVideo(){
+  function playVideo(){
     this.video = this.video.querySelector('video');
     this.src = 'video/bunny.mp4';
     this.video.setAttribute('src', this.videosrc);
