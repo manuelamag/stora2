@@ -66,7 +66,7 @@ createVideo(video){
     return document.createTextNode(t);
   }
 
-  const element = el('div', 'videos__cal');
+  const element = el('div', 'video__container');
   const aElement = el('a', 'video');
   aElement.setAttribute('href', url);
 
@@ -252,7 +252,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const videos = new Videos(); //index síðan
   const player = new Player(); //videos síðan
 
-  if(document.querySelector('.videos')){
+  if(document.querySelector('.video')){
     videos.load();
   } else {
     player.load();
