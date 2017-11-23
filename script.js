@@ -13,6 +13,7 @@ class Player {
       this.createVideo(video);
     }
   }
+
   request.onerror = () => {
     showHeading();
     const error = document.createElement('div');
@@ -26,7 +27,6 @@ class Player {
     error.appendChild(errorP);
   };
   request.send();
-
 
   play(e) {
     e.stopPropagation();
@@ -152,8 +152,9 @@ controls() {
 
 class Videos {
   constructor () {
-    this.videoContainer = document.querySelector(.constructor)
+    this.videoContainer = document.querySelector(.constructor);
   }
+
   LoadCategories(allVideos, categories) {
     this.empty(this.videosContainer);
     categories.foreEach((category) => {
@@ -168,7 +169,7 @@ class Videos {
     overlay.addEventListener('click', this.play.bind(this));
   }
   load (){
-    const request = newXMLHttpRequest();
+    const request = new XMLHttpRequest();
     const qs = new URLSearchParams(window.location.search);
     const id = parseInt(qs.get('id'), 10);
     request.open('GET', URL, true);
