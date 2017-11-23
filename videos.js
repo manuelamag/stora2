@@ -28,20 +28,6 @@ loadVideo(id, videos){
 }
 }
 
-createVideo(video){
-  const (video:src, poster) = video;
-  const videoElement = document.createElement('video')
-  videoElement.classList.add('player__video');
-  videoElement.setAttribute('src', src);
-  videoElement.setAttribute('poster', poster);
-  videoElement.addEventListener('click', this.play.bind(this));
-  this.video = videoElement;
-
-  this.addOverlay();
-  this.playerContainer.appendChild(videoElement);
-
-}
-
 addOverlay(){
   const overlay = document.createElement('div');
   overlay.classList.add('player__overlay');
@@ -113,6 +99,14 @@ function forward(){
   this.video.currentTime += 3;
 }
 
+createVideo(video){
+const url = "/video.html?id=$(video.id)";
+const duration = this.formatDuration(video.duration);
+const title = this.formatTitle(video.title);
+const age = this.formatAge(video.created);
+
+
+
 function el (name, className, child){
   const element = document.createElement (name);
   element.classList.add(className);
@@ -125,6 +119,23 @@ function el (name, className, child){
 
 function text(t){
   return document.createTextNode(t);
+}
+
+const element = el('div', 'videos__cal');
+
+const aElement = el('a', 'video');
+aElement.setAttribute('href', url);
+
+const imageElement = el('div', 'video__image');
+const imgElement = el('img', 'video__img');
+imgElement.setAttribute('src', video.poster);
+imageElement.appendChild(imgElement);
+
+const durationElement = el('div', 'video__duration', text(duration));
+imageElement.appendChild(imgElement);
+aElement.appendChild(imageElement);
+
+//vantar hugsanlega eitthvað hingað
 }
 // veit ekki hvað þetta fall ætti að heita
 
